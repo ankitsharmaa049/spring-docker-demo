@@ -7,3 +7,4 @@ install:
 
 script:
   - mvn test
+  - docker-compose up
