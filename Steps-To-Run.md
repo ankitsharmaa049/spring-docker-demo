@@ -1,3 +1,4 @@
 Step 1: Open Docker CLI
-Step 2: $docker run --name <redis-container-name> -p 6379:6379 -d redis
-Step 3: Now Run Spring Boot App
+Step 2: $docker-compose up
+Step 3: http://localhost:8080/
+        http://localhost:8080/count

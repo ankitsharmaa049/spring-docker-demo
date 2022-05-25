@@ -4,12 +4,24 @@ services:
     build: .
     image: "spring-docker-app"
     container_name: "spring-docker-container"
+    volumes:
+      - /target:/app/target
     ports:
       - '8090:8080'
+    links:
+      - redis
+  redis:
+    image: redis
+    container_name: "redis-container"
+    ports:
+      - '6379:6379'
 
 #build .        -> This means that this service uses a custom image that is built using the Dockerfile in the current directory
 #version        ->  specify the version of the Compose file format If you don’t specify the version in the Compose file it will be considered version: 1.
 #container_name -> Specifying the container name [optional]
 #image          -> Specifying the image name [optional]
 #ports          -> Mapping local port 8090 with 8080 inside the container
+#spring-boot    -> Service name
+#redis          -> Service name
+#links          -> Linking spring-boot service with redis
 
