@@ -7,4 +7,16 @@ install:
 
 script:
   - mvn test
-  - docker-compose up
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "spring-docker-demo"
+  env: "DockerEnv"
+  bucket_name: "elasticbeanstalk-us-east-1-058827412234"
+  bucket_path: "spring-docker-demo"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
