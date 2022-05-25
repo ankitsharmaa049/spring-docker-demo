@@ -1,0 +1,9 @@
+language: java
+jdk:
+  - openjdk11
+
+before_install:
+  - docker pull openjdk:11-jre-slim-sid
+
+script:
+  - ./mvnw clean install
