@@ -5,10 +5,6 @@ jdk: openjdk11
 
 services: docker
 
-before_install:
-  - echo "$AWS_ACCESS_KEY"
-  - echo "$AWS_SECRET_KEY"
-
 install:
   - mvn clean install -DskipTests
 
@@ -19,10 +15,10 @@ deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
   zip_file: 'target/spring-docker-demo.jar'
-  region: "us-east-1"
+  region: "ap-south-1"
   app: "spring-docker-demo"
-  env: "DockerEnv"
-  bucket_name: "elasticbeanstalk-us-east-1-058827412234"
+  env: "Springdockerdemo-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-058827412234"
   bucket_path: "spring-docker-demo"
   on:
     branch: master
