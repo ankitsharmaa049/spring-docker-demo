@@ -15,7 +15,7 @@ deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
   #file: "Dockerfile"
-  zip_file: 'build/ankitsharmaa049/spring-docker-demo/target/spring-docker-demo.jar'
+  zip_file: 'home/travis/build/ankitsharmaa049/spring-docker-demo/target/spring-docker-demo.jar'
   region: "ap-south-1"
   app: "spring-docker-demo"
   env: "Springdockerdemo-env"
