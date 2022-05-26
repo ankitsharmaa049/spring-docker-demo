@@ -3,7 +3,7 @@ sudo: required
 language: java
 jdk: openjdk11
 
-services: docker
+#services: docker
 
 install:
   - mvn clean install -DskipTests
@@ -14,10 +14,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  file:
-    - "/home/travis/build/ankitsharmaa049/spring-docker-demo/target/spring-docker-demo.jar"
-    - "dockerfile"
-    - "docker-compose.yml"
+  file: ["/home/travis/build/ankitsharmaa049/spring-docker-demo/target/spring-docker-demo.jar" , "dockerfile" , "docker-compose.yml" ]
   #zip_file: '/home/travis/build/ankitsharmaa049/spring-docker-demo/target/spring-docker-demo.jar'
   region: "ap-south-1"
   app: "spring-docker-demo"
