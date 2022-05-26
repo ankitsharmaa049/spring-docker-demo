@@ -11,6 +11,8 @@ install:
 script:
   - mvn test
   - ls ${TRAVIS_BUILD_DIR}
+  - cd target
+  - ls
 
 deploy:
   skip_cleanup: true
