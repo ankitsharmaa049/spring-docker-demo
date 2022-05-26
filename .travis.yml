@@ -1,14 +1,15 @@
-language: java
-jdk:
-  - openjdk11
-
 sudo: required
+
+language: java
+jdk: openjdk11
+
+services: docker
 
 install:
   - mvn clean install -DskipTests
 
-#script:
-#  - mvn test
+script:
+  - mvn test
 
 deploy:
   provider: elasticbeanstalk
