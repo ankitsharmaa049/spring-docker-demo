@@ -17,6 +17,7 @@ deploy:
   provider: elasticbeanstalk
   #file: "Dockerfile"
   zip_file:
+    - Dockerfile
     - docker-compose.yml
   region: "ap-south-1"
   app: "spring-docker-demo"
