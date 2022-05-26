@@ -14,3 +14,4 @@ COPY ${JAR_FILE} spring-docker-demo.jar
 
 #This commmand will execute once docker image is created
 ENTRYPOINT ["java","-jar","spring-docker-demo.jar"]
+
