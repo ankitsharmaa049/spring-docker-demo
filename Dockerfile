@@ -4,10 +4,10 @@ FROM openjdk:11
 EXPOSE 8080
 
 #Set the working directory inside the container for all the subsequent Dockerfile instructions
-WORKDIR '/app'
+#WORKDIR '/app'
 
 #Define the name of a parameter and its default value
-ARG JAR_FILE=target/spring-docker-demo.jar
+ARG JAR_FILE=spring-docker-demo/spring-docker-demo.jar
 
 #Copy jar file into container as spring-docker-demo.jar
 COPY ${JAR_FILE} spring-docker-demo.jar

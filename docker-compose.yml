@@ -4,8 +4,8 @@ services:
     build: .
     image: "spring-docker-app"
     container_name: "spring-docker-container"
-    volumes:
-      - /target:/app/target
+#    volumes:
+#      - /target:/app/target
     ports:
       - '8080:8080'
 #    links:
