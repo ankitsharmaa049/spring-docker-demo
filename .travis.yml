@@ -20,7 +20,6 @@ deploy:
   bucket_path: "spring-docker-demo"
   on:
     branch: master
-  access_key_id:
-    secure: "AKIAQ3MTDCMFLH4DIEME"
+  access_key_id: "AKIAQ3MTDCMFLH4DIEME"
   secret_access_key:
     secure: "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"
