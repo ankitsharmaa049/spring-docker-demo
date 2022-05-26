@@ -2,9 +2,11 @@ language: java
 jdk:
   - openjdk11
 
-script:
-  - mvn clean install -DskipTests
-  - mvn test
+#install:
+#  - mvn clean install -DskipTests
+#
+#script:
+#  - mvn test
 
 deploy:
   provider: elasticbeanstalk
