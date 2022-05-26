@@ -3,7 +3,7 @@
 language: java
 jdk: openjdk11
 
-#services: docker
+services: docker
 
 install:
   - mvn clean install -DskipTests
@@ -11,13 +11,16 @@ install:
 script:
   - mvn test
 
+before_deploy:
+  - docker-compose up
+
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
   #file: "Dockerfile"
-  zip_file:
-    - target/spring-docker-demo.jar
+#  zip_file:
+#    - target/spring-docker-demo.jar
   region: "ap-south-1"
   app: "spring-docker-demo"
   env: "Springdockerdemo-env"
