@@ -2,9 +2,11 @@ language: java
 jdk:
   - openjdk11
 
-#install:
-#  - mvn clean install -DskipTests
-#
+sudo: required
+
+install:
+  - mvn clean install -DskipTests
+
 #script:
 #  - mvn test
 
