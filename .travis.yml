@@ -11,10 +11,6 @@ install:
 script:
   - mvn test
 
-before_deploy:
-  - docker-compose up
-
-
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
