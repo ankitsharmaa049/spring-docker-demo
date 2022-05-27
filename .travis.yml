@@ -18,9 +18,9 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  #file: "Dockerfile"
-#  zip_file:
-#    - target/spring-docker-demo.jar
+  zip_file:
+    - Dockerfile
+    - docker-compose.yml
   region: "ap-south-1"
   app: "spring-docker-demo"
   env: "Springdockerdemo-env"
