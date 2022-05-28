@@ -3,7 +3,7 @@
 language: java
 jdk: openjdk11
 
-services: docker
+#services: docker
 
 install:
   - mvn clean install -DskipTests
@@ -14,15 +14,18 @@ script:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  zip_file:
-    - Dockerfile
-    - docker-compose.yml
+#  zip_file:
+#    - Dockerfile
+#    - docker-compose.yml
   region: "ap-south-1"
+  #name of the application that you set up in Elastic beanstalk
   app: "spring-docker-demo"
   env: "Springdockerdemo-env"
+  #The Elastic beanstalk has its own folder in S3 that contains all projects.
   bucket_name: "elasticbeanstalk-ap-south-1-058827412234"
   #Location within Bucket to upload app to.
   bucket_path: "spring-docker-demo"
+  #This will tell Travis to what branch to triggers build.
   on:
     branch: master
     tags: false
