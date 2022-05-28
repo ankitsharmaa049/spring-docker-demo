@@ -11,18 +11,21 @@ install:
 script:
   - mvn test
   - mkdir build
-  - cp Dockerfile build/Dockerfile
-  - cp docker-compose.yml build/docker-compose.yml
-  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
-  - ls build
-  - zip abc 'build/'
-  - ls
+  - cd build
+  - type nul > hello.txt
+  - cd ..
+#  - cp Dockerfile build/Dockerfile
+#  - cp docker-compose.yml build/docker-compose.yml
+#  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
+#  - ls build
+#  - zip abc 'build/'
+#  - ls
 
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  zip_file: "abc.zip"
+  zip_file: build
   #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
