@@ -15,9 +15,7 @@ script:
   - cp docker-compose.yml build/docker-compose.yml
   - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
   - ls build
-  - cd build
-  - zip abc
-  - cd ..
+  - zip abc 'build'
   - ls
 
 
