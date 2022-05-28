@@ -10,16 +10,24 @@ install:
 
 script:
   - mvn test
+  - mkdir build
+  - cp Dockerfile build/Dockerfile
+  - cp docker-compose.yml build/docker-compose.yml
+  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
+  - cd build
+  - ls
+  - cd ..
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-#  zip_file:
-#    - Dockerfile
-#    - docker-compose.yml
+  zip_file:
+    - /build
+  #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
   app: "spring-docker-demo"
+  #Elastic Beanstalk environment the application will be deployed to.
   env: "Springdockerdemo-env"
   #The Elastic beanstalk has its own folder in S3 that contains all projects.
   bucket_name: "elasticbeanstalk-ap-south-1-058827412234"
