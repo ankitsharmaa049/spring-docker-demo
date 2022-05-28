@@ -26,9 +26,9 @@ script:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-#  zip_file: build
   file_glob: true
-  file: "build/**/*.{xpi,zip}"
+  zip_file: build
+#  file: "build/**/*.{xpi,zip}"
   #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
