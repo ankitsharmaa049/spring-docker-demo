@@ -15,6 +15,7 @@ script:
   - echo asdf > hello.txt
   - cd ..
   - ls ankit
+  - zip ankit ankit.zip
 #  - cp Dockerfile build/Dockerfile
 #  - cp docker-compose.yml build/docker-compose.yml
 #  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
