@@ -10,11 +10,11 @@ install:
 
 script:
   - mvn test
-  - mkdir build
-  - cd build
+  - mkdir ankit
+  - cd ankit
   - echo asdf > hello.txt
   - cd ..
-  - ls build
+  - ls ankit
 #  - cp Dockerfile build/Dockerfile
 #  - cp docker-compose.yml build/docker-compose.yml
 #  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
@@ -27,7 +27,7 @@ deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
   file_glob: true
-  zip_file: build
+  zip_file: ankit
 #  file: "build/**/*.{xpi,zip}"
   #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
