@@ -15,7 +15,5 @@ COPY ${JAR_FILE} spring-docker-demo.jar
 #This commmand will execute once docker image is created
 ENTRYPOINT ["java","-jar","spring-docker-demo.jar"]
 
-FROM nginx:1.15.0
-EXPOSE 80
-ADD nginx.conf /etc/nginx/conf.d/nginx.conf
+
 
