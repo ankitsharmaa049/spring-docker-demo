@@ -1,7 +1,7 @@
 #Specify a base image
 FROM openjdk:11
 
-EXPOSE 5000
+#EXPOSE 5000
 
 #Set the working directory inside the container for all the subsequent Dockerfile instructions
 #WORKDIR '/app'
@@ -14,4 +14,8 @@ COPY ${JAR_FILE} spring-docker-demo.jar
 
 #This commmand will execute once docker image is created
 ENTRYPOINT ["java","-jar","spring-docker-demo.jar"]
+
+FROM nginx:1.15.0
+EXPOSE 80
+ADD nginx.conf /etc/nginx/conf.d/nginx.conf
 
