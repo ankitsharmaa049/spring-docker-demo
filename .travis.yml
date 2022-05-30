@@ -11,6 +11,7 @@ script:
 before_deploy:
   - mkdir build
   - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
+  - ls
 
 deploy:
   skip_cleanup: true
