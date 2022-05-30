@@ -1,36 +1,19 @@
-#sudo: required
+sudo: required
 
-language: java
-jdk: openjdk11
+services: docker
 
-#services: docker
+before_install:
+  - docker-compose build
 
 install:
   - mvn clean install -DskipTests
 
 script:
   - mvn test
-  - mkdir ankit
-  - cd ankit
-  - echo asdf > hello.txt
-  - cd ..
-  - ls ankit
-  - zip ankit ankit.zip
-#  - cp Dockerfile build/Dockerfile
-#  - cp docker-compose.yml build/docker-compose.yml
-#  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
-#  - ls build
-#  - zip abc 'build/'
-#  - ls
-
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  file_glob: true
-  zip_file: ankit
-#  file: "build/**/*.{xpi,zip}"
-  #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
   app: "spring-docker-demo"
