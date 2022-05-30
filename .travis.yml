@@ -9,7 +9,8 @@ script:
   - mvn test
 
 before_deploy:
-  - docker-compose build
+  - mkdir build
+  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
 
 deploy:
   skip_cleanup: true
