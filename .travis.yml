@@ -10,7 +10,7 @@ script:
 
 before_deploy:
   - mkdir build
-  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
+  - cp target/spring-docker-demo.jar src/spring-docker-demo.jar
   - ls
 
 deploy:
