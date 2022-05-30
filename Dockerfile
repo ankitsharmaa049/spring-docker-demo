@@ -1,7 +1,7 @@
 #Specify a base image
 FROM openjdk:11
 
-EXPOSE 8080
+EXPOSE 80
 
 #Set the working directory inside the container for all the subsequent Dockerfile instructions
 #WORKDIR '/app'
