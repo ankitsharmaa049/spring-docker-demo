@@ -17,6 +17,7 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
+  #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
   app: "spring-docker-demo"
