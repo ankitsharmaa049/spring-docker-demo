@@ -2,14 +2,14 @@ sudo: required
 
 services: docker
 
-before_install:
-  - docker-compose build
-
 install:
   - mvn clean install -DskipTests
 
 script:
   - mvn test
+
+before_deploy:
+  - docker-compose build
 
 deploy:
   skip_cleanup: true
