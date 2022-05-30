@@ -10,8 +10,9 @@ script:
 
 before_deploy:
   - mkdir build
-  - cp target/spring-docker-demo.jar .
-  - ls
+  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
+  - git add build
+  - git commit -m "added build folder"
 
 deploy:
   skip_cleanup: true
