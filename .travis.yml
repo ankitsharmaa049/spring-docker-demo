@@ -1,6 +1,6 @@
-sudo: required
+language: java
 
-services: docker
+jdk: openjdk11
 
 install:
   - mvn clean install -DskipTests
@@ -9,15 +9,12 @@ script:
   - mvn test
 
 before_deploy:
-  - mkdir build
-  - cp target/spring-docker-demo.jar build/spring-docker-demo.jar
-  - git add build
-  - git commit -m "added build folder"
+  - git add target/spring-docker-demo.jar
+  - git commit -m "added jar file"
 
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
-  zip_file: build
   #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
@@ -34,5 +31,8 @@ deploy:
     tags: false
   access_key_id: "$AWS_ACCESS_KEY"
   secret_access_key: "$AWS_SECRET_KEY"
+
+after_deploy:
+  - git rm -r target
 
 
