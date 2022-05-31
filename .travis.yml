@@ -17,12 +17,13 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: elasticbeanstalk
+  zip_file: build
   #must be the region the Elastic Beanstalk application is running on
   region: "ap-south-1"
   #name of the application that you set up in Elastic beanstalk
   app: "spring-docker-demo"
   #Elastic Beanstalk environment the application will be deployed to.
-  env: "Springdockerdemo-env"
+  env: "SpringDockerDemo-env"
   #The Elastic beanstalk has its own folder in S3 that contains all projects.
   bucket_name: "elasticbeanstalk-ap-south-1-058827412234"
   #Location within Bucket to upload app to.
